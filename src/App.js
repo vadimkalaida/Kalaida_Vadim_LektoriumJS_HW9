@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import './App.scss';
 import FormComponent from "./components/FormComponent/FormComponent";
+import FormComponentFunc from "./components/FormComponentFunc/FormComponentFunc";
 import ToDoComponentFunc from "./components/ToDoComponentFunc/ToDoComponentFunc";
-import ToDoComponent from "./components/ToDoComponent/ToDoComponent";
-import GameDesigners from "./components/GameDesigners/gameDesigners";
+import GameDesignersFunc from "./components/GameDesignersFunc/GameDesignersFunc";
 
 function App() {
   const [currentPage, setCurrentPage] = useState('clear');
@@ -26,7 +26,7 @@ function App() {
         </div>
       </header>
       {currentPage === 'clear' ? null : null}
-      {currentPage === 'gameDevelopersPage' ? <GameDesigners /> : null}
+      {currentPage === 'gameDevelopersPage' ? <GameDesignersFunc /> : null}
       {currentPage === 'formPage' ? <FormComponent /> : null}
       {currentPage === 'toDoPage' ? <ToDoComponentFunc /> : null}
     </div>

@@ -7,8 +7,7 @@ export default class GameDesigners extends Component {
     console.log('Props: ', props);
     this.state = {
       appDesignNumber : 0,
-      appGameDevelopersNumber : 0,
-      app2GameDevelopersNumber : 0
+      appGameDevelopersNumber : 0
     }
     this.gameDevelopers = [
       {

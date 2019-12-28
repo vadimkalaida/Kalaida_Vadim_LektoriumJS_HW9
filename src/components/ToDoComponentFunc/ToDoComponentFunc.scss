@@ -1,65 +1,105 @@
-.ContentForm {
-  width: 650px;
-  min-height: 500px;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topBlock {
+  width: 400px;
+  height: 300px;
+  background: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
   position: relative;
-  background: linear-gradient(to right, #000E04 0%, #150810 100%);
-  margin-top: 35px;
-  & form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 40px;
-    & span {
-      color: #fff;
-      margin-bottom: 20px;
-      margin-top: -25px;
-      font-size: 14px;
+  &-text {
+    position: absolute;
+    bottom: -10px;
+    left: 5px;
+    font-size: 14px;
+  }
+}
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  &-input {
+    width: 80%;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: #000E04;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    &::placeholder {
+      color: #D0D0D0;
     }
   }
-  &-input {
-    width: 85%;
-    height: 40px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, .4);
-    outline: none;
-    padding-left: 10px;
-    color: #fff;
-    font-size: 15px;
-    transition: .2s;
-    margin-bottom: 30px;
-    &::placeholder {
-      color: #fff;
-    }
-    &:focus {
-      border-bottom: 2px solid #fff;
-    }
+  & span {
+    color: #000E04;
   }
   &-btn {
-    width: 87%;
-    height: 50px;
-    border: none;
+    width: 25%;
+    height: 40px;
     outline: none;
-    background: #77B857;
-    color: #fff;
-    text-transform: uppercase;
-    transition: .2s;
-    letter-spacing: 1.5px;
-    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    background: #000E04;
     cursor: pointer;
-    margin-bottom: 30px;
+    transition: .2s;
+    margin-top: 15px;
+    margin-bottom: 15px;
     &:hover {
-      background: #8EC272;
+      background: #122016;
     }
   }
 }
 
 .ErrorBlock {
-  width: 87%;
-  height: 60px;
+  width: 25%;
+  height: 40px;
   position: absolute;
-  bottom: 30px;
+  bottom: 0;
   &No {
     display: none;
+  }
+}
+
+.items {
+  width: 400px;
+  height: 500px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.item {
+  width: 300px;
+  height: 150px;
+  background: black;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  &No {
+    display: none;
+  }
+  & * {
+    color: #ffffff;
+  }
+  &-title {
+    padding-top: 15px;
+    text-transform: uppercase;
   }
 }
