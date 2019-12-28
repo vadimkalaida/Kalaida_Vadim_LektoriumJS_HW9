@@ -3,19 +3,12 @@ import './ToDoComponentFunc.scss'
 
 function ToDoComponentFunc() {
   const [name, setName] = useState('Name');
-  const [nameError, setNameError] = useState('');
   const [age, setAge] = useState(0);
   const [ageError, setAgeError] = useState('');
   const [occupation, setOccupation] = useState('Occupation');
-  const [occupationError, setOccupationError] = useState('');
   const [blockClass, setBlockClass] = useState('ErrorBlockNo');
   const [id, setId] = useState(0);
   const [items, setItems] = useState([]);
-
-  onChangeHumanName = onChangeHumanName.bind(this);
-  onChangeAge = onChangeAge.bind(this);
-  onChangeOccupation = onChangeOccupation.bind(this);
-  addItem = addItem.bind(this);
 
   function onChangeHumanName(event) {
     setName(event.target.value);
@@ -68,12 +61,10 @@ function ToDoComponentFunc() {
     <div className="wrapper">
       <div className="topBlock">
         <form className="form">
-          <input type="text" name="name" id="name" className="form-input" placeholder={'Name'} onChange={onChangeHumanName} required />
-          { nameError !== '' && <span>{nameError}</span> }
-          <input type="text" name="age" id="age" className="form-input" placeholder={'Age'} onChange={onChangeAge} required />
+          <input type="text" name="name" id="name" className="form-input" value={name} placeholder={'Name'} onChange={onChangeHumanName} required />
+          <input type="text" name="age" id="age" className="form-input" value={age} placeholder={'Age'} onChange={onChangeAge} required />
           { ageError !== '' && <span>{ageError}</span> }
-          <input type="text" name="occupation" id="occupation" className="form-input" placeholder={'Occupation'} onChange={onChangeOccupation} required />
-          { occupationError !== '' && <span>{occupationError}</span> }
+          <input type="text" name="occupation" id="occupation" className="form-input" value={occupation} placeholder={'Occupation'} onChange={onChangeOccupation} required />
           <div className={blockClass}></div>
           <input type="submit" name="submit" id="submit" className={'form-btn'} value={'Add item'} onClick={addItem}/>
         </form>

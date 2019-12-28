@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.scss';
-import FormComponent from "./components/FormComponent/FormComponent";
+// import FormComponent from "./components/FormComponent/FormComponent";
 import FormComponentFunc from "./components/FormComponentFunc/FormComponentFunc";
 import ToDoComponentFunc from "./components/ToDoComponentFunc/ToDoComponentFunc";
 import GameDesignersFunc from "./components/GameDesignersFunc/GameDesignersFunc";
@@ -27,7 +27,7 @@ function App() {
       </header>
       {currentPage === 'clear' ? null : null}
       {currentPage === 'gameDevelopersPage' ? <GameDesignersFunc /> : null}
-      {currentPage === 'formPage' ? <FormComponent /> : null}
+      {currentPage === 'formPage' ? <FormComponentFunc /> : null}
       {currentPage === 'toDoPage' ? <ToDoComponentFunc /> : null}
     </div>
   );

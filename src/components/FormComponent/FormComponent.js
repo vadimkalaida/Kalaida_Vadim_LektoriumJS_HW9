@@ -200,15 +200,15 @@ export default class FormComponent extends Component {
     return(
       <div className={'ContentForm'}>
         <form>
-          <input type="text" name="username" id="username" pattern = "[A-Za-z]" placeholder={'*Username'} className={'ContentForm-input'} onChange={this.onChangeUsername} />
+          <input type="text" name="username" id="username" value={this.state.username} placeholder={'*Username'} className={'ContentForm-input'} onChange={this.onChangeUsername} />
           { usernameError !== '' && <span>{usernameError}</span> }
-          <input type="text" name="email" id="email" pattern = "[A-Za-z]" placeholder={'*Email'} className={'ContentForm-input'} onChange={this.onChangeEmail} />
+          <input type="text" name="email" id="email" placeholder={'*Email'} value={this.state.email} className={'ContentForm-input'} onChange={this.onChangeEmail} />
           { emailError !== '' && <span>{emailError}</span> }
-          <input type="text" name="phone" id="phone" pattern = "[A-Za-z]" placeholder={'Phone Number'} className={'ContentForm-input'} onChange={this.onChangePhone} />
+          <input type="text" name="phone" id="phone" placeholder={'Phone Number'} value={this.state.phone} className={'ContentForm-input'} onChange={this.onChangePhone} />
           { phoneError !== '' && <span>{phoneError}</span> }
-          <input type="password" name="password" id="password" pattern = "[A-Za-z]" placeholder={'*Password'} className={'ContentForm-input'} onChange={this.onChangePassword} />
+          <input type="password" name="password" id="password" placeholder={'*Password'} value={this.state.password} className={'ContentForm-input'} onChange={this.onChangePassword} />
           { passwordError !== '' && <span>{passwordError}</span> }
-          <input type="password" name="passwordConfirm" id="passwordConfirm" pattern = "[A-Za-z]" placeholder={'*Confirm Password'} onChange={this.onChangePasswordConfirm} className={'ContentForm-input'} />
+          <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder={'*Confirm Password'} value={this.state.passwordConfirm} onChange={this.onChangePasswordConfirm} className={'ContentForm-input'} />
           { passwordConfirmError !== '' && <span>{passwordConfirmError}</span> }
           <div className={this.state.blockClass}></div>
           <button id="submitBtn" className={'ContentForm-btn'} onClick={this.onSubmit}>Signup</button>
