@@ -55,12 +55,11 @@
   }
 }
 
-.ErrorBlock {
-  width: 100%;
-  height: 170px;
+.errorBlockForm {
+  width: 87%;
+  height: 90px;
   position: absolute;
   bottom: 0;
-  background: #fff;
   &No {
     display: none;
   }

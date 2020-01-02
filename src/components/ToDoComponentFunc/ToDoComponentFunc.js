@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './ToDoComponentFunc.scss'
 
 function ToDoComponentFunc() {
-  const [name, setName] = useState('Name');
-  const [age, setAge] = useState(0);
+  const [name, setName] = useState('');
+  const [age, setAge] = useState('');
   const [ageError, setAgeError] = useState('');
-  const [occupation, setOccupation] = useState('Occupation');
+  const [occupation, setOccupation] = useState('');
   const [blockClass, setBlockClass] = useState('ErrorBlockNo');
   const [id, setId] = useState(0);
   const [items, setItems] = useState([]);
@@ -17,16 +17,24 @@ function ToDoComponentFunc() {
 
   function onChangeAge(event) {
     setAge(event.target.value);
+  }
+
+  useEffect(() => {
+    const ageArrCheck = [];
     for(let i = 0; i < age.length; i++) {
       if(isNaN(parseInt(age[i]))) {
-        setAgeError('Only numbers!');
-        setBlockClass('ErrorBlock');
-      } else {
-        setAgeError('');
-        setBlockClass('ErrorBlockNo');
+        ageArrCheck.push(age[i]);
       }
     }
-  }
+    if(ageArrCheck.length > 0) {
+      setAgeError('Only numbers!');
+      setBlockClass('ErrorBlock');
+    } else {
+      setAgeError('');
+      setBlockClass('ErrorBlockNo');
+    }
+  }, [age]);
+
 
   function onChangeOccupation(event) {
     setOccupation(event.target.value);
@@ -44,9 +52,9 @@ function ToDoComponentFunc() {
     document.querySelector('#name').value = '';
     document.querySelector('#age').value = '';
     document.querySelector('#occupation').value = '';
-    setName('Name');
-    setAge(0);
-    setOccupation('Occupation');
+    setName('');
+    setAge('');
+    setOccupation('');
   }
 
   function delItem(index, event) {
@@ -72,9 +80,9 @@ function ToDoComponentFunc() {
       </div>
       <div className="items">
         { items.map( (item, index) => <div className="item" key={index} onContextMenu={delItem.bind(this, index)}>
-          <h3 className={'item-title'}>{ item.name }</h3>
-          <p className={'item-age'}>{ item.age }</p>
-          <p className={'item-occupation'}>{ item.occupation }</p>
+          <h3 className={'item-title'}>{ item.name.length < 1 ? 'Name' : item.name }</h3>
+          <p className={'item-age'}>{ item.age.length < 1 ? 0 : item.age }</p>
+          <p className={'item-occupation'}>{ item.occupation.length < 1 ? 'Occupation' : item.occupation }</p>
         </div> ) }
       </div>
     </div>
