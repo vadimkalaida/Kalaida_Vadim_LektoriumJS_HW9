@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './App.scss';
 // import FormComponent from "./components/FormComponent/FormComponent";
 import FormComponentFunc from "./components/FormComponentFunc/FormComponentFunc";
@@ -7,9 +7,6 @@ import GameDesignersFunc from "./components/GameDesignersFunc/GameDesignersFunc"
 
 function App() {
   const [currentPage, setCurrentPage] = useState('clear');
-  useEffect(() => {
-    console.log('render');
-  });
   return (
     <div className="App">
       <header className="App-header">

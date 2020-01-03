@@ -120,8 +120,6 @@ function FormComponentFunc() {
     setPhone('');
     setPassword('');
     setPasswordConfirm('');
-    localStorage.setItem('user', JSON.stringify(informationArr));
-    console.log(informationArr);
   }
 
   return(
@@ -137,7 +135,7 @@ function FormComponentFunc() {
         { passwordError !== '' && <span>{passwordError}</span> }
         <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder={'*Confirm Password'} value={passwordConfirm} onChange={onChangePasswordConfirm} className={'ContentForm-input'} />
         { passwordConfirmError !== '' && <span>{passwordConfirmError}</span> }
-        <button id="submitBtn" className={'ContentForm-btn'} onClick={onSubmit}>Signup</button>
+        <input type={'button'} id="submitBtn" className={'ContentForm-btn'} onClick={onSubmit} value={'sign in'}/>
         <div className={errorBlockForm}></div>
       </form>
     </div>
