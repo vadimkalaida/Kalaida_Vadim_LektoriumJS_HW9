@@ -69,7 +69,7 @@ function ToDoComponentFunc() {
     <div className="wrapper">
       <div className="topBlock">
         <form className="form">
-          <input type="text" name="name" id="name" className="form-input" value={name} placeholder={'Name'} onChange={onChangeHumanName} required />
+          <input type="text" name="name" id="name" className='form-input' value={name} placeholder={'Name'} onChange={onChangeHumanName} required />
           <input type="text" name="age" id="age" className="form-input" value={age} placeholder={'Age'} onChange={onChangeAge} required />
           { ageError !== '' && <span>{ageError}</span> }
           <input type="text" name="occupation" id="occupation" className="form-input" value={occupation} placeholder={'Occupation'} onChange={onChangeOccupation} required />
